@@ -15,7 +15,7 @@ import './chat.css';
 import randomText from './random_text.json';
 
 const { Header, Footer, Content } = Layout;
-let formRef = {};
+let formRef = {}, scrollView = {};
 
 class Chatbot extends Component {
   state = { currentValue: '' }
@@ -28,10 +28,11 @@ class Chatbot extends Component {
     const randomMsg = randomText[Math.floor(Math.random() * randomText.length)];
     setTimeout(() => {
       this.props.userMessage({ messageId: Date.now(), messageHistory: [{ timeStamp: new Date(), msg: randomMsg }], type: 'income' });
+      scrollView.current.scrollIntoView({ behavior: 'smooth' })
     }, 1000);
     formRef.current.resetFields();
   }
-  
+
   render() {
     return (
       <div className={'app-conatiner'}>
@@ -68,6 +69,7 @@ class Chatbot extends Component {
                     </Tooltip>
                 )
               }
+              <div ref={scrollView} />
             </div>
           </Content>
           <Footer>
@@ -83,7 +85,17 @@ class Chatbot extends Component {
               <Form.Item
                 name={'message'}
               >
-                <Input size="large" placeholder={'Type your message...'} className={'msg-typer'} suffix={<PlusOutlined />} />
+                <Input
+                  size="large"
+                  placeholder={'Type your message...'}
+                  className={'msg-typer'}
+                  suffix={
+                    <PlusOutlined
+                      onClick={(evt) => {
+                        this.onFinish({ message: formRef.current.getFieldValue('message') })
+                      }} />
+                  }
+                />
               </Form.Item>
             </Form>
 
