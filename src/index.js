@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import './index.css';
 import Chatbot from './components/chatbot';
 import store from './state_manager/config/store';
 import reportWebVitals from './reportWebVitals';

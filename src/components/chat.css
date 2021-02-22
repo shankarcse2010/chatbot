@@ -1,0 +1,106 @@
+body{
+  background-image: linear-gradient( rgba(134, 163, 238, 0.2), #99b1ee);
+}
+
+.app-conatiner {
+  max-width: 350px;
+  margin: auto;
+  border-radius: 30px;
+  box-shadow: 2px 2px 5px 2px grey;
+}
+
+#root {
+  padding-top: 20px;
+}
+
+.ant-layout-header {
+  background: #fff;
+  border-bottom: 1px solid #efefef;
+}
+
+.app-msg-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 500px;
+  overflow: auto;
+  padding: 30px;
+  background-color: #fff;
+}
+
+.app-msg-wrapper>.messages {
+  margin: 8px 0;
+}
+
+.income {
+  align-self: flex-start;
+}
+.out_going{
+  align-self: flex-end;
+}
+.income>.chat-content {
+  border: 1px solid #86a3ee;
+  border-radius: 25px 25px 25px 0;
+  padding: 10px 20px;
+}
+
+.out_going>.chat-content {
+  background-color: #86a3ee;
+  padding: 10px 15px;
+  border-radius: 25px 25px 0 25px;
+  color: #fff;
+}
+.chat-time{
+  font-size: 9px;
+  color: #efefef;
+  font-weight: bold;
+  margin-top: 5px;
+}
+.out_going .chat-time{
+  text-align: right;
+}
+.app-wrapper {
+  border-radius: 30px;
+}
+
+.ant-layout-footer {
+  border-radius: 0 0 30px 30px;
+  padding: 20px;
+  background: #fff;
+  border: 1px solid #efefef;
+}
+
+.ant-layout-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 30px 30px 0 0;
+}
+
+.msg-typer {
+  background-color: #86a3ee;
+  color: #fff;
+  border-radius: 20px;
+  padding: 10px 30px;
+}
+
+#basic_message {
+  background-color: #86a3ee;
+  color: #fff;
+}
+
+#basic_message::placeholder {
+  color: #fff;
+  font-size: 14px;
+  opacity: 0.5;
+}
+
+#basic>div {
+  margin: auto;
+}
+
+.out_going {
+  user-select: none;
+}
+.chat-user{
+  margin-left: 20px;
+}
